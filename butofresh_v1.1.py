@@ -82,10 +82,10 @@ def farm_videos(videos, interval):
 	driver.get(videos[rand_url])
 
 	progress_bar = driver.find_element_by_class_name("ytp-progress-bar")
-	progress_bar.send_keys("m")
+	progress_bar.send_keys("m") # Mute video audio.
 
 	un_pause_video(driver)
-	handle_ads(driver)
+	handle_ads(driver) # Skip ads in the least amount of time possible.
 	un_pause_video(driver)
 
 	currentTime = int(time.time())
